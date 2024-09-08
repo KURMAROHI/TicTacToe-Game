@@ -28,6 +28,9 @@ public class PlayerInfo : MonoBehaviour
     void OnEnable()
     {
         DetectClick.CheckWinngCondition += CheckWinnigCondition;
+        GameUIControl.Instance.DestroyorRefreshGrid += DestroyorRefreshGrid;
+
+
     }
     void Start()
     {
@@ -39,6 +42,20 @@ public class PlayerInfo : MonoBehaviour
     void OnDisable()
     {
         DetectClick.CheckWinngCondition -= CheckWinnigCondition;
+        GameUIControl.Instance.DestroyorRefreshGrid -= DestroyorRefreshGrid;
+
+    }
+
+    void DestroyorRefreshGrid(bool IsRefresh)
+    {
+        //if (IsRefresh)
+        {
+            _Player = Players.Player1;
+            int NormalCounter = 0;
+             SwitchPlayer(ref NormalCounter, Players.Player1,false);
+            PlayerCount1 = 0;
+            PlayerCount2 = 0;
+        }
     }
 
 
@@ -78,7 +95,7 @@ public class PlayerInfo : MonoBehaviour
         }
     }
 
-    private void SwitchPlayer(ref int playerCount, Players nextPlayer)
+    private void SwitchPlayer(ref int playerCount, Players nextPlayer, bool SwitchPlayer = true)
     {
         playerCount++;
         // currentPlayerCanvas.alpha = 0.5f;
@@ -86,7 +103,10 @@ public class PlayerInfo : MonoBehaviour
         float Player1alpha = Player1.GetComponent<CanvasGroup>().alpha;
         Player1.GetComponent<CanvasGroup>().alpha = Player2.GetComponent<CanvasGroup>().alpha;
         Player2.GetComponent<CanvasGroup>().alpha = Player1alpha;
-        _Player = nextPlayer;
+        if (SwitchPlayer)
+        {
+            _Player = nextPlayer;
+        }
     }
 
 

@@ -25,7 +25,7 @@ public class DetectClick : MonoBehaviour
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hitInfo) && hitInfo.collider.CompareTag("Cube"))
             {
-                //Debug.Log("==>Mouse button down 1|" + hitInfo.collider.gameObject.name);
+                Debug.Log("==>Mouse button down 1|" + hitInfo.collider.gameObject.name);
                 GameObject Spawnobject = PlayerInfo.Instance._Player == Players.Player1 ? _XObject : _OObject;
                 Spawnobject = Instantiate(Spawnobject, hitInfo.collider.gameObject.transform.position, Quaternion.identity, hitInfo.collider.gameObject.transform);
                 Spawnobject.transform.localPosition = _position;
@@ -33,7 +33,7 @@ public class DetectClick : MonoBehaviour
             }
             else
             {
-                Debug.Log("==>its not Hittin yaar");
+              // Debug.Log("==>its not Hittin yaar");
             }
         }
     }
