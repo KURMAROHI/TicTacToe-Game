@@ -83,7 +83,7 @@ public class GridManager : MonoBehaviour
 
     public void UpdateDetails(Vector2Int Pos, bool ISPlayer1 = false)
     {
-        Debug.Log("==>|" + Pos);
+     //   Debug.Log("==>|" + Pos);
         BlocksInfo[Pos.x, Pos.y].IsBlockFree = false;
         BlocksInfo[Pos.x, Pos.y].IsPlayer1Occupied = ISPlayer1;
     }

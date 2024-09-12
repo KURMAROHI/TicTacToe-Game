@@ -2,10 +2,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInfo : MonoBehaviour
 {
@@ -13,9 +11,11 @@ public class PlayerInfo : MonoBehaviour
     public static PlayerInfo Instance;
     public Players _Player = Players.None;
     [SerializeField] GameObject Player1, Player2;
+    public bool PlayerInput = false;
 
     public int PlayerCount1 = 0, PlayerCount2 = 0;
     public int WinningCount = 3;
+
 
     void Awake()
     {
@@ -50,11 +50,15 @@ public class PlayerInfo : MonoBehaviour
     {
         //if (IsRefresh)
         {
+            PlayerInput=false;
+            Player1.GetComponent<CanvasGroup>().alpha = 1f;
+            Player2.GetComponent<CanvasGroup>().alpha = 0.5f;
             _Player = Players.Player1;
-            int NormalCounter = 0;
-             SwitchPlayer(ref NormalCounter, Players.Player1,false);
             PlayerCount1 = 0;
             PlayerCount2 = 0;
+
+            Player1.GetComponent<Image>().color = Color.white;
+            Player2.GetComponent<Image>().color = Color.white;
         }
     }
 
@@ -84,12 +88,25 @@ public class PlayerInfo : MonoBehaviour
             }
         }
 
-        if (CheckblocksForWinCondtion(_Pos, ISplayer1) == WinningCount)
+
+
+
+        int Count = CheckblocksForWinCondtion(_Pos, ISplayer1);
+        if (Count == WinningCount)
         {
-            Debug.LogError("==>| " + (ISplayer1 ? "Player1 Wins" : "Player 2 Wins"));
+            Debug.LogError("==>| " + (ISplayer1 ? "Player1 Wins" : "Player 2 Wins") + "::" + WinningCount);
+            if (ISplayer1)
+            {
+                Player1.GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+                Player2.GetComponent<Image>().color = Color.green;
+            }
         }
         else
         {
+            Debug.LogError("==>Count|" + Count);
             int NormalCounter = 0;
             SwitchPlayer(ref NormalCounter, ISplayer1 ? Players.Player2 : Players.Player1);
         }
@@ -148,27 +165,43 @@ public class PlayerInfo : MonoBehaviour
 
                             #region  Checking Furthur After getting one Block 
                             bool ISFailedInSameDirection = false;
+                            bool IsCheckingOtherDir = false;
                             for (int j = 0; j < WinningCount - 1; j++)
                             {
                                 Vector2Int Newpos1 = NewCheckPos + Possiblemove;
+                                Debug.LogError("==>1" + ParentBlockpos + "::" + Newpos1 + "::" + NewCheckPos + "::" + Possiblemove + "::" + Count);
                                 if (ISFailedInSameDirection)
                                 {
+                                    ISFailedInSameDirection = false;
+                                    IsCheckingOtherDir = true;
                                     Possiblemove = new Vector2Int(-Possiblemove.x, -Possiblemove.y);
                                     Newpos1 = ParentBlockpos + Possiblemove;
                                 }
 
-
+                                NewCheckPos = Newpos1;
                                 if (GridManager.Instance.CheckValidposition(Newpos1.x, Newpos1.y))
                                 {
                                     Blockinfo blockinfo1 = GridManager.Instance.IsBlockFilled(Newpos1.x, Newpos1.y);
+                                    Debug.LogError("==>2" + ParentBlockpos + "::" + Newpos1 + "::" + NewCheckPos + "::" + Possiblemove + "::" + Count);
                                     if (!blockinfo1.IsBlockFree && blockinfo1.IsPlayer1Occupied == ISplayer1)
                                     {
+
                                         Count++;
-                                        break;
+                                        // Debug.Log("==>Count at break|" + Count);
+                                        if (Count == WinningCount)
+                                        {
+                                            break;
+                                        }
+
                                     }
                                     else
                                     {
+                                        Debug.LogError("==>IsFailed|" + IsCheckingOtherDir);
                                         ISFailedInSameDirection = true;
+                                        if (IsCheckingOtherDir)
+                                        {
+                                            break;
+                                        }
                                     }
                                 }
 
@@ -178,7 +211,7 @@ public class PlayerInfo : MonoBehaviour
 
                             if (Count == WinningCount)
                             {
-                                Debug.Log("==>Count|" + Count + "::" + i);
+                                //Debug.Log("==>Count|" + Count + "::" + i);
                                 return Count;
                             }
                             else

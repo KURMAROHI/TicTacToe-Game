@@ -14,6 +14,7 @@ public class GridSelection : MonoBehaviour
     public GameObject SpawnGrid = null;
     // Start is called before the first frame update
 
+
     void OnEnable()
     {
         StartCoroutine(RegiSterEventWithDelay());
@@ -45,7 +46,7 @@ public class GridSelection : MonoBehaviour
         if (!Ismoving)
         {
             Ismoving = true;
-            GridScrollRect.DOAnchorPosX(Dist, 0.7f).SetEase(Ease.InOutBack).OnComplete(() =>
+            GridScrollRect.DOAnchorPosX(Dist, 0.5f).SetEase(Ease.InOutBack).OnComplete(() =>
             {
                 Ismoving = false;
             });
@@ -61,7 +62,13 @@ public class GridSelection : MonoBehaviour
             SpawnGrid.name = Name;
             SpawnGrid.SetActive(true);
             transform.GetChild(0).gameObject.SetActive(false);
+            Invoke("SetActivePlayerInput", 1f);
         }
+    }
+
+    void SetActivePlayerInput()
+    {
+        PlayerInfo.Instance.PlayerInput = true;
     }
 
     void SetButtonVisibility(float Position)
