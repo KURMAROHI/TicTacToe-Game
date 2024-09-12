@@ -27,21 +27,24 @@ public class GridManager : MonoBehaviour
     void OnEnable()
     {
         _GridDetails.Clear();
-      //  Debug.LogError("==>Setting Grid Details");
+        //  Debug.LogError("==>Setting Grid Details");
         BlocksInfo = new Blockinfo[GridSize.x, GridSize.y];
         int Row = 0;
         foreach (Transform item in this.transform)
         {
-           // Debug.LogError("==>Setting Grid Details 1|" + item.name);
-            int Column = 0;
-            foreach (Transform item2 in item)
+            // Debug.LogError("==>Setting Grid Details 1|" + item.name);
+            if (item.CompareTag("Row"))
             {
-                //Debug.LogError("==>Setting Grid Details 2|" + item2.name);
-                BlocksInfo[Row, Column].IsBlockFree = true;
-                _GridDetails.Add(new GridDetails(item2.gameObject, new Vector2Int(Row, Column)));
-                Column++;
+                int Column = 0;
+                foreach (Transform item2 in item)
+                {
+                    //Debug.LogError("==>Setting Grid Details 2|" + item2.name);
+                    BlocksInfo[Row, Column].IsBlockFree = true;
+                    _GridDetails.Add(new GridDetails(item2.gameObject, new Vector2Int(Row, Column)));
+                    Column++;
+                }
+                Row++;
             }
-            Row++;
         }
     }
 
@@ -83,7 +86,7 @@ public class GridManager : MonoBehaviour
 
     public void UpdateDetails(Vector2Int Pos, bool ISPlayer1 = false)
     {
-     //   Debug.Log("==>|" + Pos);
+        Debug.Log("==>|" + Pos);
         BlocksInfo[Pos.x, Pos.y].IsBlockFree = false;
         BlocksInfo[Pos.x, Pos.y].IsPlayer1Occupied = ISPlayer1;
     }

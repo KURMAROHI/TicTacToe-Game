@@ -46,7 +46,7 @@ public class GridSelection : MonoBehaviour
         if (!Ismoving)
         {
             Ismoving = true;
-            GridScrollRect.DOAnchorPosX(Dist, 0.5f).SetEase(Ease.InOutBack).OnComplete(() =>
+            GridScrollRect.DOAnchorPosX(Dist, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
             {
                 Ismoving = false;
             });
@@ -80,7 +80,7 @@ public class GridSelection : MonoBehaviour
             Prev.GetComponent<CanvasGroup>().alpha = 0.5f;
             return;
         }
-        else if (Position <= -2625F)
+        else if (Position <= -1875)
         {
             PrevButton.enabled = true;
             NextButton.enabled = false;

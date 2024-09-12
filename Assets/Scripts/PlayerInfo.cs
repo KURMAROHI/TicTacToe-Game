@@ -63,10 +63,10 @@ public class PlayerInfo : MonoBehaviour
     }
 
 
-    private void CheckWinnigCondition(GameObject ParentBlock)
+    private void CheckWinnigCondition(Vector2Int _Pos)
     {
         //        Debug.Log("==>Checking Winnign Condition");
-        Vector2Int _Pos = GridManager.Instance.PosofBlock(ParentBlock);
+        //Vector2Int _Pos = GridManager.Instance.PosofBlock(ParentBlock);
         bool ISplayer1 = false;
         if (_Player == Players.Player1)
         {
@@ -115,8 +115,6 @@ public class PlayerInfo : MonoBehaviour
     private void SwitchPlayer(ref int playerCount, Players nextPlayer, bool SwitchPlayer = true)
     {
         playerCount++;
-        // currentPlayerCanvas.alpha = 0.5f;
-        // nextPlayerCanvas.alpha = 1f;
         float Player1alpha = Player1.GetComponent<CanvasGroup>().alpha;
         Player1.GetComponent<CanvasGroup>().alpha = Player2.GetComponent<CanvasGroup>().alpha;
         Player2.GetComponent<CanvasGroup>().alpha = Player1alpha;
