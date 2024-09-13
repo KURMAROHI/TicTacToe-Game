@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3982
+  m_VersionIndex: 3985
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1204,7 +1204,7 @@ GameObject:
   - component: {fileID: 4260867580387434924}
   - component: {fileID: 6351902905795563075}
   m_Layer: 0
-  m_Name: Point Light1 (3)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1237,7 +1237,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 9.6
+  m_Intensity: 4
   m_Range: 9.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1302,7 +1302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &182258774275850874
 Transform:
   m_ObjectHideFlags: 0
@@ -1333,7 +1333,7 @@ GameObject:
   - component: {fileID: 6185840208741043166}
   - component: {fileID: 3642701487886107526}
   m_Layer: 0
-  m_Name: Point Light1 (2)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1366,7 +1366,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 9.6
+  m_Intensity: 4
   m_Range: 9.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2504,7 +2504,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3697,7 +3697,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4890,7 +4890,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5136,7 +5136,7 @@ GameObject:
   - component: {fileID: 5033653157139358508}
   - component: {fileID: 5619768399991571035}
   m_Layer: 0
-  m_Name: Point Light1 (1)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5169,7 +5169,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 10.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6307,7 +6307,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7500,7 +7500,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3982
+  m_VersionIndex: 3985
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8693,7 +8693,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9886,7 +9886,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10006,7 +10006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4700372780935703811
 Transform:
   m_ObjectHideFlags: 0
@@ -10035,7 +10035,7 @@ GameObject:
   - component: {fileID: 4732381349726209808}
   - component: {fileID: 8955482660170279985}
   m_Layer: 0
-  m_Name: Point Light1 (1)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10068,7 +10068,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 9.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -11206,7 +11206,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12434,7 +12434,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12550,7 +12550,7 @@ GameObject:
   - component: {fileID: 7959196905156329831}
   - component: {fileID: 8854444394635108424}
   m_Layer: 0
-  m_Name: Point Light1 (3)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12583,7 +12583,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 9.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -13721,7 +13721,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3982
+  m_VersionIndex: 3985
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14914,7 +14914,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3982
+  m_VersionIndex: 3985
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -16107,7 +16107,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -17336,7 +17336,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -17451,7 +17451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7578284632151350323}
   m_Layer: 0
-  m_Name: 1 (1)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17487,7 +17487,7 @@ GameObject:
   - component: {fileID: 826862850018391651}
   - component: {fileID: 7805894537838546530}
   m_Layer: 0
-  m_Name: Point Light1 (3)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17520,7 +17520,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 7
+  m_Intensity: 4
   m_Range: 10.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -17710,7 +17710,7 @@ GameObject:
   - component: {fileID: 5671679736796239110}
   - component: {fileID: 8068302740904262630}
   m_Layer: 0
-  m_Name: Point Light1 (2)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17743,7 +17743,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 7
+  m_Intensity: 4
   m_Range: 10.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18881,7 +18881,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18997,7 +18997,7 @@ GameObject:
   - component: {fileID: 2363786829100571796}
   - component: {fileID: 3812161324927655609}
   m_Layer: 0
-  m_Name: Point Light1
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19030,7 +19030,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 9.6
+  m_Intensity: 4
   m_Range: 9.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -20168,7 +20168,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -20284,7 +20284,7 @@ GameObject:
   - component: {fileID: 2126904099094271258}
   - component: {fileID: 8481823786814331278}
   m_Layer: 0
-  m_Name: Point Light1
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20317,7 +20317,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 9.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -21455,7 +21455,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -21571,7 +21571,7 @@ GameObject:
   - component: {fileID: 2341428370900493224}
   - component: {fileID: 3374015437250434932}
   m_Layer: 0
-  m_Name: Point Light1 (2)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21604,7 +21604,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 9.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -21701,7 +21701,7 @@ GameObject:
   - component: {fileID: 9172768745232075131}
   - component: {fileID: 7255515927334525606}
   m_Layer: 0
-  m_Name: Point Light1 (2)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21734,7 +21734,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 10.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -22872,7 +22872,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -24101,7 +24101,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -25365,7 +25365,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3982
+  m_VersionIndex: 3985
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -25505,8 +25505,8 @@ Transform:
   - {fileID: 3470782509848898964}
   - {fileID: 1691215941533120526}
   - {fileID: 3169948063478116783}
-  - {fileID: 4700372780935703811}
   - {fileID: 182258774275850874}
+  - {fileID: 4700372780935703811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6397318802783426731
@@ -26612,7 +26612,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -27805,7 +27805,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -28998,7 +28998,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -29114,7 +29114,7 @@ GameObject:
   - component: {fileID: 7253574596787544058}
   - component: {fileID: 6887843682418267541}
   m_Layer: 0
-  m_Name: Point Light1
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29147,7 +29147,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 7
+  m_Intensity: 4
   m_Range: 10.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -30285,7 +30285,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -30401,7 +30401,7 @@ GameObject:
   - component: {fileID: 8352510199369374681}
   - component: {fileID: 5364664677097581825}
   m_Layer: 0
-  m_Name: Point Light1
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30434,7 +30434,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 10.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -30495,7 +30495,7 @@ GameObject:
   - component: {fileID: 199439600254020192}
   - component: {fileID: 4842519349896200457}
   m_Layer: 0
-  m_Name: Point Light1 (1)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30528,7 +30528,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 9.6
+  m_Intensity: 4
   m_Range: 9.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -30589,7 +30589,7 @@ GameObject:
   - component: {fileID: 8677418785862186088}
   - component: {fileID: 6301245709788689035}
   m_Layer: 0
-  m_Name: Point Light1 (3)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30622,7 +30622,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 6
+  m_Intensity: 4
   m_Range: 10.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -31760,7 +31760,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3976
+  m_VersionIndex: 3979
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -31876,7 +31876,7 @@ GameObject:
   - component: {fileID: 1910807387269507095}
   - component: {fileID: 4246509913723957044}
   m_Layer: 0
-  m_Name: Point Light1 (1)
+  m_Name: Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31909,7 +31909,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5358146, g: 0.7584905, b: 0.0787112, a: 1}
-  m_Intensity: 7
+  m_Intensity: 4
   m_Range: 10.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

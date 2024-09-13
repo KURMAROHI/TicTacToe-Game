@@ -62,7 +62,7 @@ public class GridSelection : MonoBehaviour
             SpawnGrid.name = Name;
             SpawnGrid.SetActive(true);
             transform.GetChild(0).gameObject.SetActive(false);
-            Invoke("SetActivePlayerInput", 1f);
+            Invoke("SetActivePlayerInput", 0.2f);
         }
     }
 
