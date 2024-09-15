@@ -50,7 +50,7 @@ public class PlayerInfo : MonoBehaviour
     {
         //if (IsRefresh)
         {
-            PlayerInput=false;
+            PlayerInput = false;
             Player1.GetComponent<CanvasGroup>().alpha = 1f;
             Player2.GetComponent<CanvasGroup>().alpha = 0.5f;
             _Player = Players.Player1;
@@ -201,6 +201,15 @@ public class PlayerInfo : MonoBehaviour
                                             break;
                                         }
                                     }
+                                }
+                                else
+                                {
+                                    ISFailedInSameDirection = true;
+                                    if (IsCheckingOtherDir)
+                                    {
+                                        break;
+                                    }
+
                                 }
 
 
