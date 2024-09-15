@@ -40,7 +40,7 @@ public class GridSelection : MonoBehaviour
     bool Ismoving = false;
     public void ButtonClick(float DistTomovbe)
     {
-        Debug.Log("==>on button Click|" + DistTomovbe + "::" + (GridScrollRect == null));
+       // Debug.Log("==>on button Click|" + DistTomovbe + "::" + (GridScrollRect == null));
         float Dist = GridScrollRect.anchoredPosition.x + DistTomovbe;
         SetButtonVisibility(Dist);
         if (!Ismoving)
@@ -55,7 +55,7 @@ public class GridSelection : MonoBehaviour
 
     public void LoadLevel(string Name)
     {
-        Debug.Log("==>Load Level|" + Name + "::" + Ismoving);
+       // Debug.Log("==>Load Level|" + Name + "::" + Ismoving);
         if (!Ismoving)
         {
             SpawnGrid = Instantiate(Resources.Load<GameObject>(Name));

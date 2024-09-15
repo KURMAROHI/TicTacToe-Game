@@ -7,13 +7,10 @@ public class AspectControl : MonoBehaviour
     public float AspectRatio;
     void Start()
     {
-        Debug.Log("==>Aspect Ratio|" + (float)Screen.height/(float)Screen.width);
-        AspectRatio =  (float)Screen.height/(float)Screen.width;
+        Debug.Log("==>Aspect Ratio|" + (float)Screen.width/(float)Screen.height);
+        AspectRatio =  (float)Screen.width/(float)Screen.height;
     }
 
 
-    void Update()
-    {
 
-    }
 }

@@ -9,7 +9,7 @@ public class DetectClick : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject _XObject, _OObject;
-    Vector3 _position = new Vector3(-3.4f, 12f, -0.5f);
+    Vector3 _position = new Vector3(-3.4f, 9f, -0.5f);
     Camera camera;
     public static UnityAction<Vector2Int> CheckWinngCondition;
     void Start()
