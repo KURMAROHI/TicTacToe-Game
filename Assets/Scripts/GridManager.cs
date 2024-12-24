@@ -54,12 +54,7 @@ public class GridManager : MonoBehaviour
         camera = Camera.main;
     }
 
-    // void SetBlocksAccorDingToGrid()
-    // {
-    //     Vector3 screenCenter = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 10f));
-    //     Debug.Log("==>" + screenCenter);
-    //     Instantiate(Cube, screenCenter, Quaternion.identity,transform);
-    // }
+  
 
 
     public Vector2Int PosofBlock(GameObject _Block)
