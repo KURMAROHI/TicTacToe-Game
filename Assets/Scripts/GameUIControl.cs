@@ -56,3 +56,5 @@ public struct Blockinfo
     public bool IsBlockFree;
     public bool IsPlayer1Occupied;
 }
+
+

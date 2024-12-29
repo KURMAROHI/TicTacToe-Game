@@ -11,7 +11,7 @@ public class GridManager : MonoBehaviour
     public Vector2Int GridSize = new Vector2Int(3, 3);
     public Blockinfo[,] BlocksInfo;
     public List<GridDetails> _GridDetails = new List<GridDetails>();
-    Camera camera;
+    private Camera _camera;
 
     [SerializeField] int WinningCount = 3;
 
@@ -51,7 +51,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         PlayerInfo.Instance.WinningCount = WinningCount;
-        camera = Camera.main;
+        _camera = Camera.main;
     }
 
   
