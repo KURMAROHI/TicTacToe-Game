@@ -9553,7 +9553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421844092014637932}
-  - component: {fileID: 7095577330051710290}
+  - component: {fileID: 6003356656803788046}
   m_Layer: 0
   m_Name: Grid4
   m_TagString: Untagged
@@ -9582,7 +9582,7 @@ Transform:
   - {fileID: 2674102535121540313}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7095577330051710290
+--- !u!114 &6003356656803788046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9591,22 +9591,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6269972556961064760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Script: {fileID: 11500000, guid: db8b19ec73c2bf34e9448fe533e403f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3509967011
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
+  GridSize: {x: 4, y: 4}
+  _GridDetails: []
+  WinningCount: 3
 --- !u!1 &6468455028048436922
 GameObject:
   m_ObjectHideFlags: 0

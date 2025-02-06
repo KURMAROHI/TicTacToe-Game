@@ -29,7 +29,7 @@ public class CameraFovAdjuster : MonoBehaviour
         // else if (currentAspect > BaseAsepect + 0.04)
         else if (currentAspect > BaseAsepect + thresold)
         {
-            camera.fieldOfView = (baseFOV * AspectMultiplier);
+            camera.fieldOfView = baseFOV * AspectMultiplier;
         }
         else
         {

@@ -1,7 +1,6 @@
 
 
-using System.Collections.Generic;
-using DG.Tweening.Core.Easing;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -63,183 +62,90 @@ public class PlayerInfo : MonoBehaviour
     }
 
 
+
     private void CheckWinnigCondition(Vector2Int _Pos)
     {
-        //        Debug.Log("==>Checking Winnign Condition");
-        //Vector2Int _Pos = GridManager.Instance.PosofBlock(ParentBlock);
-        bool ISplayer1 = false;
-        if (_Player == Players.Player1)
+        bool isPlayer1 = (_Player == Players.Player1);
+        GridManager.Instance.UpdateDetails(_Pos, isPlayer1);
+
+        // Check if the current player has met the winning condition
+        if (CheckBlocksForWinCondition(_Pos, isPlayer1) == WinningCount)
         {
-            GridManager.Instance.UpdateDetails(_Pos, true);
-            ISplayer1 = true;
-            if (PlayerCount1 <= WinningCount - 2)
-            {
-                SwitchPlayer(ref PlayerCount1, Players.Player2);
-                return;
-            }
+            Debug.LogError("==>| " + (isPlayer1 ? "Player1 Wins" : "Player2 Wins") + "::" + WinningCount);
+            Image winningPlayerImage = isPlayer1 ? Player1.GetComponent<Image>() : Player2.GetComponent<Image>();
+            winningPlayerImage.color = Color.green;
         }
         else
         {
-            GridManager.Instance.UpdateDetails(_Pos);
-            if (PlayerCount2 <= WinningCount - 2)
+            // Switch to the next player
+            SwitchPlayer(isPlayer1 ? Players.Player2 : Players.Player1);
+        }
+    }
+
+    private void SwitchPlayer(Players nextPlayer)
+    {
+        _Player = nextPlayer;
+
+        // Swap the alpha values of the player indicators
+        float player1Alpha = Player1.GetComponent<CanvasGroup>().alpha;
+        Player1.GetComponent<CanvasGroup>().alpha = Player2.GetComponent<CanvasGroup>().alpha;
+        Player2.GetComponent<CanvasGroup>().alpha = player1Alpha;
+    }
+
+    // Check blocks in horizontal, vertical, and diagonal directions for a winning condition
+    private int CheckBlocksForWinCondition(Vector2Int parentBlockPos, bool isPlayer1)
+    {
+       
+        Vector2Int[] directions = {
+        new Vector2Int(1, 0),  // Horizontal
+        new Vector2Int(0, 1),  // Vertical
+        new Vector2Int(1, 1),  // Diagonal (top-left to bottom-right)
+        new Vector2Int(1, -1)  // Diagonal (bottom-left to top-right)
+    };
+
+        foreach (var direction in directions)
+        {
+            int count = 1; // Start with the current block
+
+            // Check in the positive direction
+            count += CountConsecutiveBlocks(parentBlockPos, direction, isPlayer1);
+
+            // Check in the negative direction
+            count += CountConsecutiveBlocks(parentBlockPos, -direction, isPlayer1);
+
+            // If the count meets the winning condition, return
+            if (count >= WinningCount)
             {
-                SwitchPlayer(ref PlayerCount2, Players.Player1);
-                return;
+                return count;
             }
         }
 
+        return 0; // No winning condition met
+    }
 
+    // Count consecutive blocks in a given direction
+    private int CountConsecutiveBlocks(Vector2Int startPos, Vector2Int direction, bool isPlayer1)
+    {
+        int count = 0;
+        Vector2Int currentPos = startPos + direction;
 
-
-        int Count = CheckblocksForWinCondtion(_Pos, ISplayer1);
-        if (Count == WinningCount)
+        while (GridManager.Instance.CheckValidposition(currentPos.x, currentPos.y))
         {
-            Debug.LogError("==>| " + (ISplayer1 ? "Player1 Wins" : "Player 2 Wins") + "::" + WinningCount);
-            if (ISplayer1)
+            Blockinfo blockInfo = GridManager.Instance.IsBlockFilled(currentPos.x, currentPos.y);
+
+            if (!blockInfo.IsBlockFree && blockInfo.IsPlayer1Occupied == isPlayer1)
             {
-                Player1.GetComponent<Image>().color = Color.green;
+                count++;
+                currentPos += direction;
             }
             else
             {
-                Player2.GetComponent<Image>().color = Color.green;
+                break;
             }
+            Debug.Log("==>:" +blockInfo.IsPlayer1Occupied +"::" +count);
         }
-        else
-        {
-            Debug.LogError("==>Count|" + Count);
-            int NormalCounter = 0;
-            SwitchPlayer(ref NormalCounter, ISplayer1 ? Players.Player2 : Players.Player1);
-        }
-    }
 
-    private void SwitchPlayer(ref int playerCount, Players nextPlayer, bool SwitchPlayer = true)
-    {
-        playerCount++;
-        float Player1alpha = Player1.GetComponent<CanvasGroup>().alpha;
-        Player1.GetComponent<CanvasGroup>().alpha = Player2.GetComponent<CanvasGroup>().alpha;
-        Player2.GetComponent<CanvasGroup>().alpha = Player1alpha;
-        if (SwitchPlayer)
-        {
-            _Player = nextPlayer;
-        }
-    }
-
-
-    // tghsi Fuinction used to Check the blcoks in horizantal and and Diagniol for Winning Condition
-    int CheckblocksForWinCondtion(Vector2Int ParentBlockpos, bool ISplayer1)
-    {
-        List<Vector2Int> LstofPossibleMoves = new List<Vector2Int>{
-            new Vector2Int(1,0),
-            new Vector2Int(-1,0),
-            new Vector2Int(0,1),
-            new Vector2Int(0,-1),
-            new Vector2Int(1,1),
-            new Vector2Int(1,-1),
-            new Vector2Int(-1,-1),
-            new Vector2Int(-1,1),
-        };
-
-
-
-        int Count = 1;
-        Vector2Int NewCheckPos = Vector2Int.zero, Possiblemove = Vector2Int.zero;
-        //  try
-        {
-            if (Count == 1)
-            {
-                for (int i = 0; i < LstofPossibleMoves.Count; i++)
-                {
-                    Vector2Int Newpos = ParentBlockpos + LstofPossibleMoves[i];
-                    // Debug.Log("==>1|" + ParentBlockpos + "::" + LstofPossibleMoves[i] + "::" + Newpos);
-                    if (GridManager.Instance.CheckValidposition(Newpos.x, Newpos.y))
-                    {
-                        Blockinfo blockinfo = GridManager.Instance.IsBlockFilled(Newpos.x, Newpos.y);
-                        if (!blockinfo.IsBlockFree && blockinfo.IsPlayer1Occupied == ISplayer1)
-                        {
-                            Possiblemove = LstofPossibleMoves[i];
-                            NewCheckPos = Newpos;
-                            Count++;
-
-
-                            #region  Checking Furthur After getting one Block 
-                            bool ISFailedInSameDirection = false;
-                            bool IsCheckingOtherDir = false;
-                            for (int j = 0; j < WinningCount - 1; j++)
-                            {
-                                Vector2Int Newpos1 = NewCheckPos + Possiblemove;
-                                Debug.LogError("==>1" + ParentBlockpos + "::" + Newpos1 + "::" + NewCheckPos + "::" + Possiblemove + "::" + Count);
-                                if (ISFailedInSameDirection)
-                                {
-                                    ISFailedInSameDirection = false;
-                                    IsCheckingOtherDir = true;
-                                    Possiblemove = new Vector2Int(-Possiblemove.x, -Possiblemove.y);
-                                    Newpos1 = ParentBlockpos + Possiblemove;
-                                }
-
-                                NewCheckPos = Newpos1;
-                                if (GridManager.Instance.CheckValidposition(Newpos1.x, Newpos1.y))
-                                {
-                                    Blockinfo blockinfo1 = GridManager.Instance.IsBlockFilled(Newpos1.x, Newpos1.y);
-                                    Debug.LogError("==>2" + ParentBlockpos + "::" + Newpos1 + "::" + NewCheckPos + "::" + Possiblemove + "::" + Count);
-                                    if (!blockinfo1.IsBlockFree && blockinfo1.IsPlayer1Occupied == ISplayer1)
-                                    {
-
-                                        Count++;
-                                        // Debug.Log("==>Count at break|" + Count);
-                                        if (Count == WinningCount)
-                                        {
-                                            break;
-                                        }
-
-                                    }
-                                    else
-                                    {
-                                        Debug.LogError("==>IsFailed|" + IsCheckingOtherDir);
-                                        ISFailedInSameDirection = true;
-                                        if (IsCheckingOtherDir)
-                                        {
-                                            break;
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    ISFailedInSameDirection = true;
-                                    if (IsCheckingOtherDir)
-                                    {
-                                        break;
-                                    }
-
-                                }
-
-
-
-                            }
-
-                            if (Count == WinningCount)
-                            {
-                                //Debug.Log("==>Count|" + Count + "::" + i);
-                                return Count;
-                            }
-                            else
-                            {
-                                Count = 1;
-                            }
-                            #endregion
-                        }
-
-                    }
-                }
-            }
-
-
-        }
-        // catch (Exception e)
-        // {
-        //     Debug.LogError("==>" + e.Message);
-        // }
-
-        return Count;
+        return count;
     }
 
 
